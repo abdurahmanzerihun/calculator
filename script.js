@@ -41,12 +41,41 @@ digitBtn.forEach(button=>{
                 display.value="";
                 firstNumber=secondNumber=operator=null;
         }
-     else if (digitValue === 'x') {
+        else if (digitValue === 'x') {
     // remove the last character from display
     display.value = display.value.slice(0, -1);
    
 }
+       else if(digitValue==='.'){
+        if(operator===null){
+        let current =display.value || "";
+        if(!current.includes('.')){
+                if(current===""){
+                        display.value +='0.';
+                }
+               else{
+                        display.value +='.';
+                }
+        
+        
+        }
+}
+        else{
 
+                let parts=display.value.split(operator);
+                 current=parts[1] || "";
+                if(!current.includes('.')){
+                     if(current===""){
+                        display.value +='0.';
+                }
+                else{
+                        display.value +='.';
+                }
+        
+                
+                }
+        }
+}
                 
   });
 });
