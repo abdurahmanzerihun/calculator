@@ -56,7 +56,13 @@ function operate(firstNumber,operator,secondNumber ){
                 case'+': return  firstNumber+secondNumber;
                 case '-': return firstNumber-secondNumber;
                 case '*': return firstNumber*secondNumber;
-                case '/': return firstNumber/secondNumber;
+                case '/':
+                        {
+                             if(secondNumber===0){
+                                return 'ERROR'
+                             }
+                                return firstNumber/secondNumber;
+                        } 
         }
 }
        
