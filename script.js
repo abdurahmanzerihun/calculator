@@ -4,8 +4,6 @@ let firstNumber=null;
 let operator=null;
 let secondNumber=null;
 let operatorsArr=['+','*','/','-'];
-//let expression=display.value;
-
 
 digitBtn.forEach(button=>{
         button.addEventListener('click',()=>{
@@ -43,9 +41,14 @@ digitBtn.forEach(button=>{
                 display.value="";
                 firstNumber=secondNumber=operator=null;
         }
+     else if (digitValue === 'x') {
+    // remove the last character from display
+    display.value = display.value.slice(0, -1);
+   
+}
 
                 
-        });
+  });
 });
 
 function operate(firstNumber,operator,secondNumber ){
