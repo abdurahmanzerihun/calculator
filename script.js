@@ -6,10 +6,10 @@ let secondNumber=null;
 let operatorsArr=['+','*','/','-'];
 
 digitBtn.forEach(button=>{
-        button.addEventListener('click',()=>{
+            button.addEventListener('click',()=>{
             let digitValue=button.textContent;   
               
-        if(!isNaN(digitValue)) {
+       if(!isNaN(digitValue)) {
                 display.value +=digitValue;
                if(operator===null){
         firstNumber=Number(display.value);
@@ -46,7 +46,7 @@ digitBtn.forEach(button=>{
     display.value = display.value.slice(0, -1);
    
 }
-       else if(digitValue==='.'){
+        else if(digitValue==='.'){
         if(operator===null){
         let current =display.value || "";
         if(!current.includes('.')){
@@ -56,10 +56,8 @@ digitBtn.forEach(button=>{
                else{
                         display.value +='.';
                 }
-        
-        
         }
-}
+     }
         else{
 
                 let parts=display.value.split(operator);
@@ -79,7 +77,7 @@ digitBtn.forEach(button=>{
                 
   });
 });
-
+// Operation
 function operate(firstNumber,operator,secondNumber ){
         switch(operator){
                 case'+': return  firstNumber+secondNumber;
@@ -94,4 +92,35 @@ function operate(firstNumber,operator,secondNumber ){
                         } 
         }
 }
-       
+  // Event from keyboard  
+document.addEventListener("keydown",(event)=>{
+        let key =event.key;
+        if(key >= "0" && key <= "9" && key.length===1)
+        {
+pressButton(key);
+        }
+        else if(operatorsArr.includes(key)){
+pressButton(key);
+        }
+        else if(key==="Enter"){
+pressButton('=');
+        }
+        else if(key==="Escape"){
+pressButton('C');
+        }
+        else if(key==="Backspace"){
+pressButton('x');
+        }
+        else if(key==='.'){
+pressButton(".");
+        }
+      
+}) 
+function pressButton(digitValue){
+      
+ digitBtn.forEach((button)=>{
+if(button.textContent===digitValue)
+       button.click();
+ })
+
+}
