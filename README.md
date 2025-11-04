@@ -1,4 +1,4 @@
 # calculator
-A simple calculator
+A simple calculator : 
 - to explore DOM 
-- can function using keyboard to.
+- It can function using keyboard to.
