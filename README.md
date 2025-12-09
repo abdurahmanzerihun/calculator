@@ -1,5 +1,5 @@
 # calculator
-## A simple calculator project at The Odin Project(TOP) Using JavaScript
+## Project(#5) at The Odin Project(TOP) Using JavaScript
 ## Core concepts used:
 - Objects
 - DOM and event handling
